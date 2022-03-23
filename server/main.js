@@ -9,4 +9,4 @@ app.use('/', require('./routes/ProdRoute'));
 app.use('/', require('./routes/FornRoute'));
 app.use('/', require('./routes/MarcasRoute'));
 
-app.listen(4000)
+app.listen(process.env.PORT || '4000')

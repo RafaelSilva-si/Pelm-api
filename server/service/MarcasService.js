@@ -12,15 +12,6 @@ exports.getMarcas = async function(req, res, next){
 };
 
 
-exports.getMarcasById = async function(req, res, next){
-    const response = await marcasModel.getMarcasById(req.params.id);
-    if(!response){
-        resNotification.error(next, response)
-    } else {
-        return resNotification.sucess(res, response)
-    }
-};
-
 exports.insertMarca = async function(req, res, next){
     const response = await marcasModel.insertMarcas(req.body);
     if(!response){

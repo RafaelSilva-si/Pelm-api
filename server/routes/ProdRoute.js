@@ -4,9 +4,8 @@ const productsService = require('../service/ProductsService');
 
 
 router.get('/products', (...args) => productsService.getProducts(...args));
-router.get('/products/filter',(...args) => productsService.getProduct(...args));
 router.post('/products/new',(...args) => productsService.insertProduct(...args));
-router.put('/products/put',(...args) => productsService.updateProduct(...args));
-router.delete('/products/delete',(...args) => productsService.deleteProduct(...args));
-
+router.put('/products/:id',(...args) => productsService.updateProduct(...args));
+router.delete('/products/:id',(...args) => productsService.deleteProduct(...args));
+router.put('/products/status/:id', (...args) => productsService.updateStatusProduct(...args))
 module.exports = router;

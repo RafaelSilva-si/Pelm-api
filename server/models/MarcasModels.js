@@ -4,10 +4,6 @@ exports.getMarcas = query => {
     return dbConn.query("select * from get_marcas($1,$2,$3)", [query.id, query.status, query.forn]);
 }
 
-exports.getMarcasById = id => {
-    return dbConn.query('select * from marcas_pelm where id = $1', [id]);
-}
-
 exports.insertMarcas = query => {
     return dbConn.any('call INSERT_MARCA_PROCEDURE($1,$2)', [query.name, query.forn]);
 }
